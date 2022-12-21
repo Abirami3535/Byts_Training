@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char>bag;
+        for(auto ch:s)
+        {
+            if(ch=='(' || ch=='{' || ch=='[') bag.push(ch);
+
+            else
+            {
+                if(bag.empty()) return false;
+
+                if(ch==')') if(bag.top()=='(') bag.pop();
+                if(ch=='}') if(bag.top()=='{') bag.pop();
+                if(ch==']') if(bag.top()=='[') bag.pop();
+            }
+        }
+        if(bag.empty())return true;
+        return false;
+    }
+};
