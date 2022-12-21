@@ -10,9 +10,9 @@ public:
             {
                 if(bag.empty()) return false;
 
-                if(ch==')') if(bag.top()=='(') bag.pop();
-                if(ch=='}') if(bag.top()=='{') bag.pop();
-                if(ch==']') if(bag.top()=='[') bag.pop();
+                if(ch==')') if(bag.top()=='(') bag.pop();else return false;
+                if(ch=='}') if(bag.top()=='{') bag.pop();else return false;
+                if(ch==']') if(bag.top()=='[') bag.pop();else return false;
             }
         }
         if(bag.empty())return true;
