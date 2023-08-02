@@ -1,0 +1,25 @@
+int findGCD(int* nums, int numsSize){
+    for(int i=0; i<numsSize; i++)
+    {
+        for(int j=i+1; j<numsSize; j++)
+        {
+            if(nums[i]>nums[j])
+            {
+                int temp= nums[i];
+                nums[i]=nums[j];
+                nums[j]=temp;
+            }
+        }
+    }
+    int res=1;
+    for(int n1=nums[numsSize-1]; n1>=2;n1--)
+    {
+        if(nums[numsSize-1]%n1==0 && nums[0]%n1==0)
+        {
+           res=n1;
+           break;
+        }
+
+    }
+    return res;
+}
